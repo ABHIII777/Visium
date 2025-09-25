@@ -178,7 +178,7 @@ export default function SortingAlgorithmVisuals() {
 
     quickSortRecursive(0, newNums.length - 1);
 
-    return { steps, comparisonsCount };
+    return steps;
   };
 
   const animateSwaps = (steps) => {
