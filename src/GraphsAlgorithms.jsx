@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 
-// BFS traversal function
 const bfsTraversal = (root) => {
   const steps = [];
   const queue = [root];
@@ -19,7 +18,6 @@ const bfsTraversal = (root) => {
   return steps;
 };
 
-// TreeNode component
 const TreeNode = ({ id, value, x, y }) => (
   <g id={`node-${id}`}>
     <circle cx={x} cy={y} r="25" fill="skyblue" />
@@ -29,7 +27,6 @@ const TreeNode = ({ id, value, x, y }) => (
   </g>
 );
 
-// Hardcoded binary tree
 const tree = {
   id: 1,
   value: 1,
@@ -63,7 +60,7 @@ function App() {
           repeat: 1,
         },
         i * 0.7,
-      ); // stagger animations
+      );
     });
   }, []);
 
@@ -89,6 +86,7 @@ function App() {
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
       <h2>BFS Tree Traversal Visualizer</h2>
+      <input type="text" placeholder="Enter array e.g. [1,2,3,4,5]" />
       <svg width="100%" height="500">
         {renderTree(tree, 400, 50)}
       </svg>
